@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Divya Patel - AI & Machine Learning Engineer</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🤖</text></svg>">
+    <meta name="description" content="Portfolio of Divya Patel - AI Graduate Student specializing in Deep Learning, NLP, and Computational Neuroscience">
+    <meta name="keywords" content="AI, Machine Learning, Deep Learning, Computer Vision, NLP, Reinforcement Learning, Computational Neuroscience">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <style>
+        :root {
+            --primary: #0891b2;
+            --primary-dark: #0e7490;
+            --secondary: #0f172a;
+            --accent: #f59e0b;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            color: #0f172a;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        .dark body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #e2e8f0;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, #0ea5e9 100%);
+        }
+        
+        .dark .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, #0369a1 100%);
+        }
+        
+        .card-hover {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .dark .card-hover:hover {
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+        }
+        
+        .section-fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        .section-fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .skill-logo {
+            height: 48px;
+            width: 48px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            transition: all 0.3s ease;
+        }
+        
+        .group:hover .skill-logo {
+            filter: grayscale(0%);
+            transform: scale(1.1);
+        }
+        
+        .nav-link {
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: -13px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--primary);
+            border: 3px solid white;
+            box-shadow: 0 0 0 3px var(--primary);
+        }
+        
+        .dark .timeline-dot {
+            border: 3px solid #1e293b;
+        }
+        
+        .tech-badge {
+            display: inline-block;
+            background-color: #e0f2fe;
+            color: var(--primary);
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 2px;
+        }
+
+        .dark .tech-badge {
+            background-color: #164e63;
+            color: #7dd3fc;
+        }
+        
+        .skill-badge {
+            display: inline-block;
+            background-color: #f6c6aa;
+            color: var(--accent);
+            padding: 2px 10px;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            margin: 2px;
+        }
+
+        .dark .skill-badge {
+            background-color: #7c2d12;
+            color: #fdba74;
+        }
+        
+        .pattern-bg {
+            background-image: radial-gradient(#cbd5e1 1px, transparent 1px);
+            background-size: 20px 20px;
+            background-position: 0 0;
+        }
+        
+        .dark .pattern-bg {
+            background-image: radial-gradient(#475569 1px, transparent 1px);
+        }
+        
+        .glow {
+            box-shadow: 0 0 15px rgba(8, 145, 178, 0.3);
+        }
+
+        /* Dark mode toggle button */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: background-color 0.3s ease;
+        }
+
+        .theme-toggle:hover {
+            background-color: rgba(0, 0, 0, 0.05);
+        }
+
+        .dark .theme-toggle:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .theme-toggle svg {
+            width: 1.5rem;
+            height: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .theme-toggle:hover svg {
+            transform: rotate(12deg);
+        }
+
+        /* Dark mode specific styles */
+        .dark header {
+            background-color: rgba(15, 23, 42, 0.9);
+            border-bottom-color: #334155;
+        }
+
+        .dark .bg-white {
+            background-color: #1e293b;
+        }
+
+        .dark .text-gray-900 {
+            color: #f1f5f9;
+        }
+
+        .dark .text-gray-800 {
+            color: #e2e8f0;
+        }
+
+        .dark .text-gray-600 {
+            color: #cbd5e1;
+        }
+
+        .dark .text-gray-500 {
+            color: #94a3b8;
+        }
+
+        .dark .border-gray-200 {
+            border-color: #334155;
+        }
+
+        .dark .bg-gray-50 {
+            background-color: #0f172a;
+        }
+
+        .dark .bg-cyan-100 {
+            background-color: #164e63;
+        }
+
+        .dark .text-cyan-800 {
+            color: #a5f3fc;
+        }
+
+        .dark .bg-cyan-600 {
+            background-color: #0891b2;
+        }
+
+        .dark .bg-cyan-600:hover {
+            background-color: #0e7490;
+        }
+
+        .dark .hover\:bg-cyan-50:hover {
+            background-color: #164e63;
+        }
+
+        .dark .bg-amber-100 {
+            background-color: #7c2d12;
+        }
+
+        .dark .text-amber-500 {
+            color: #fdba74;
+        }
+
+        .dark .bg-cyan-100 {
+            background-color: #164e63;
+        }
+
+        .dark .text-cyan-500 {
+            color: #67e8f9;
+        }
+
+        .dark .bg-emerald-100 {
+            background-color: #064e3b;
+        }
+
+        .dark .text-emerald-500 {
+            color: #6ee7b7;
+        }
+
+        .dark .bg-violet-100 {
+            background-color: #4c1d95;
+        }
+
+        .dark .text-violet-500 {
+            color: #a78bfa;
+        }
+
+        .dark .border-cyan-600 {
+            border-color: #0891b2;
+        }
+
+        .dark .hover\:bg-cyan-50 {
+            background-color: #164e63;
+        }
+
+        .dark .bg-gray-200 {
+            background-color: #334155;
+        }
+
+        .dark .border-dashed {
+            border-color: #475569;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm sticky top-0 z-50 border-b border-gray-200 shadow-sm transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center">
+                    <img src="assets/PHOTO.jpg" alt="Description of the image" class="bg-gray-200 border-2 border-dashed rounded-xl w-10 h-10 mr-3">
+                    
+                    <a href="#home" class="text-xl font-bold text-gray-900 flex items-center">
+                        <span class="text-cyan-600">D</span>ivya <span class="text-cyan-600 ml-1">P</span>atel
+                    </a>
+                </div>
+                <nav class="hidden lg:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#skills" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Skills</a>
+                        <a href="#experience" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Experience</a>
+                        <a href="#projects" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Projects</a>
+                        <a href="#publications" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Publications</a>
+                        <a href="#education" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Education</a>
+                        <a href="#awards" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Awards</a>
+                        <a href="#resume" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Resume</a>
+
+                        <a href="#contact" class="nav-link text-gray-500 hover:text-cyan-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Contact</a>
+                        
+                        <!-- Dark Mode Toggle Button -->
+                        <button id="theme-toggle" class="theme-toggle text-gray-500 hover:text-cyan-600">
+                            <svg id="theme-icon-light" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                            </svg>
+                            <svg id="theme-icon-dark" class="hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                            </svg>
+                        </button>
+                    </div>
+                </nav>
+                <div class="lg:hidden flex items-center">
+                    <!-- Dark Mode Toggle Button for Mobile -->
+                    <button id="theme-toggle-mobile" class="theme-toggle text-gray-500 hover:text-cyan-600 mr-2">
+                        <svg id="theme-icon-light-mobile" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+                        </svg>
+                        <svg id="theme-icon-dark-mobile" class="hidden" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+                        </svg>
+                    </button>
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 hover:text-gray-900 hover:bg-gray-100 focus:outline-none">
+                        <span class="sr-only">Open main menu</span>
+                        <svg class="h-6 w-6" id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                        </svg>
+                         <svg class="h-6 w-6 hidden" id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div class="lg:hidden hidden" id="mobile-menu">
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg transition-colors duration-300">
+                <a href="#skills" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Skills</a>
+                <a href="#experience" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Experience</a>
+                <a href="#projects" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Projects</a>
+                <a href="#publications" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Publications</a>
+                <a href="#education" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Education</a>
+                <a href="#awards" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Awards</a>
+                <a href="#resume" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Resume</a>
+                <a href="#contact" class="text-gray-600 hover:bg-gray-50 hover:text-gray-900 block px-3 py-2 rounded-md text-base font-medium transition-colors">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8">
+
+        <!-- Hero Section -->
+        <section id="home" class="min-h-[calc(100vh-5rem)] flex items-center py-24 section-fade-in">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="max-w-2xl">
+                    <div class="inline-block bg-cyan-100 text-cyan-800 text-sm font-medium px-4 py-1 rounded-full mb-6 transition-colors duration-300">
+                        AI Research Engineer
+                    </div>
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-gray-900 leading-tight transition-colors duration-300">
+                        Transforming Data into <span class="text-cyan-600">Intelligent</span> Solutions
+                    </h1>
+                    <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-3xl transition-colors duration-300">
+                        I'm Divya Patel, a graduate student pursuing Artificial Intelligence at Khoury College of Computer Sciences, Northeastern University. I specialize in Deep Learning, Computational Neuroscience, NLP, Computer Vision, Signal Processing, and Time Series Analysis. I'm passionate about developing AI systems that bridge the gap between research and real-world applications.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row items-start gap-4">
+                        <a href="#contact" class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-3 px-8 rounded-lg transition-all transform hover:scale-105 shadow-md hover:shadow-lg glow">
+                            <span>Get in Touch</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                            </svg>
+                        </a>
+                        <div class="flex items-center gap-4 mt-4 sm:mt-0">
+                            <a href="https://www.linkedin.com/in/divya-patel-dv213/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-600 transition-colors p-2 rounded-full hover:bg-cyan-50">
+                                <span class="sr-only">LinkedIn</span>
+                                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                            </a>
+                            <a href="https://github.com/DV2123" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-600 transition-colors p-2 rounded-full hover:bg-cyan-50">
+                                 <span class="sr-only">GitHub</span>
+                                 <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden lg:block relative ai-robot">
+                    <!-- Working Lottie animation -->
+                    <lottie-player 
+                        src="https://lottie.host/2d091f3f-4527-4839-9b97-221fee6bcca0/M3P2C1eufV.json" 
+                        background="transparent" 
+                        speed="1" 
+                        style="width: 100%; height: 400px;" 
+                        loop 
+                        autoplay>
+                    </lottie-player>
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 rounded-full bg-cyan-500 opacity-20 blur-3xl"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-24 section-fade-in">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Technologies & Skills</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto transition-colors duration-300">Expertise in cutting-edge technologies that power intelligent systems and AI solutions</p>
+                </div>
+                <div class="max-w-5xl mx-auto grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-8">
+                    <!-- Skill Items -->
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Python</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">C++</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Java</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">JavaScript</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matlab/matlab-original.svg" alt="MATLAB" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">MATLAB</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">R</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" alt="PyTorch" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">PyTorch</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">TensorFlow</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" alt="Keras" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Keras</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="Numpy" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">NumPy</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" alt="Pandas" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Pandas</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" alt="OpenCV" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">OpenCV</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Django</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Docker</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Kubernetes</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="AWS" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">AWS</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Azure</p>
+                    </div>
+                    <div class="group flex flex-col items-center justify-center space-y-3">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-logo" />
+                        <p class="font-semibold text-gray-700 transition-colors duration-300">Git</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="py-24 bg-white section-fade-in pattern-bg transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Career Journey</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto transition-colors duration-300">Professional milestones and impactful contributions in AI and robotics</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <div class="relative border-l-2 border-gray-200 pl-8 md:pl-12 space-y-16">
+                         <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-500 mb-1 transition-colors duration-300">Oct 2025 -- Present</p>
+                            <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Research Assistant</h3>
+                            <p class="text-gray-600 mt-1 transition-colors duration-300">NEUMove Lab, Northeastern University, Boston, MA</p>
+                            <div class="mt-3">
+                                <p class="text-gray-600 transition-colors duration-300">• Analyzing gait samples using biomechanical signals and ML models to predict center-of-mass dynamics</p>
+                                <p class="text-gray-600 transition-colors duration-300">• Architected Bidirectional LSTM models for time series analysis, improving prediction accuracy by 15%</p>
+                                <p class="text-gray-600 transition-colors duration-300">• Extracted center-of-mass trajectories to evaluate gait stability across 10+ biomechanical conditions</p>
+                            </div>
+                            <div class="mt-3 flex flex-wrap">
+                                <span class="tech-badge">Machine Learning</span>
+                                <span class="tech-badge">LSTM</span>
+                                <span class="tech-badge">Time Series Analysis</span>
+                                <span class="tech-badge">Biomechanics</span>
+                            </div>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-500 mb-1 transition-colors duration-300">July 2024 -- Sep 2024</p>
+                            <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Data Science and Machine Learning Intern</h3>
+                            <p class="text-gray-600 mt-1 transition-colors duration-300">BrainyBeam Info-Tech, Ahmedabad, India</p>
+                            <div class="mt-3">
+                                <p class="text-gray-600 transition-colors duration-300">• Built fuel consumption prediction system using Linear Regression with R² score of 0.45</p>
+                                <p class="text-gray-600 transition-colors duration-300">• Preprocessed 5,000+ records using NumPy, Pandas, and Scikit-learn, reducing data cleaning time by 30%</p>
+                                <p class="text-gray-600 transition-colors duration-300">• Visualized key variable relationships using Matplotlib and Seaborn</p>
+                            </div>
+                            <div class="mt-3 flex flex-wrap">
+                                <span class="tech-badge">Data Science</span>
+                                <span class="tech-badge">Machine Learning</span>
+                                <span class="tech-badge">Python</span>
+                                <span class="tech-badge">Scikit-learn</span>
+                            </div>
+                        </div>
+                        <!-- Timeline Item -->
+                        <div class="relative">
+                            <div class="timeline-dot"></div>
+                            <p class="text-sm text-gray-500 mb-1 transition-colors duration-300">May 2024 -- July 2024</p>
+                            <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Machine Learning and Product Development Intern</h3>
+                            <p class="text-gray-600 mt-1 transition-colors duration-300">Indian Institute of Technology Gandhinagar, Maker Bhavan Lab, India</p>
+                            <div class="mt-3">
+                                <p class="text-gray-600 transition-colors duration-300">• Designed SaMD neurostimulation device for personalized treatment of Willis-Ekbom Disease</p>
+                                <p class="text-gray-600 transition-colors duration-300">• Trained LSTM on 10,000+ synthetic EMG signals with signal processing pipelines, achieving 75% prediction accuracy</p>
+                                <p class="text-gray-600 transition-colors duration-300">• Prototyped hardware using PCB design, 3D printing, ESP32, EMG processing, and CAD tools</p>
+                            </div>
+                            <div class="mt-3 flex flex-wrap">
+                                <span class="tech-badge">Deep Learning</span>
+                                <span class="tech-badge">Signal Processing</span>
+                                <span class="tech-badge">Hardware Prototyping</span>
+                                <span class="tech-badge">LSTM</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Projects Section -->
+        <section id="projects" class="py-24 section-fade-in">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Featured Projects</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto transition-colors duration-300">Innovative solutions showcasing expertise in AI, computer vision, and robotics</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 flex flex-col group transition-colors duration-300">
+                        <img src="assets/MARL.jpeg" alt="Multi-Agent Aerial Dog Fighting" class="rounded-xl w-full h-48 mb-4 object-cover">
+                        <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Multi-Agent Aerial Dog Fighting</h3>
+                        <p class="text-gray-600 mt-3 flex-grow transition-colors duration-300">Developed scalable MARL framework for 6 UAV agents using Ray RLlib and PPO algorithm. Generated interactive 3D simulations analyzing 1,000+ training episodes for trajectory optimization with modular architecture.</p>
+                        <div class="mt-4 flex flex-wrap">
+                            <span class="tech-badge">MARL</span>
+                            <span class="tech-badge">Ray RLlib</span>
+                            <span class="tech-badge">PPO</span>
+                            <span class="tech-badge">3D Simulation</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="#" class="text-cyan-600 hover:text-cyan-700 font-medium flex items-center">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 flex flex-col group transition-colors duration-300">
+                        <img src="assets/talk_research.png" alt="Talk-With-Research-Paper" class="rounded-xl w-full h-48 mb-4 object-cover">
+                        <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Talk-With-Research-Paper</h3>
+                        <p class="text-gray-600 mt-3 flex-grow transition-colors duration-300">Built AI-powered conversational system for research papers using NLP and RAG, deployed on GCP serving 100+ users. Implemented retrieval pipeline achieving 85%+ query accuracy using BERT embeddings and attention mechanisms.</p>
+                        <div class="mt-4 flex flex-wrap">
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">RAG</span>
+                            <span class="tech-badge">BERT</span>
+                            <span class="tech-badge">GCP</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://github.com/DV2123/Talk-With-Research-Paper" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-medium flex items-center">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 flex flex-col group transition-colors duration-300">
+                        <img src="assets/llm_finetuning.png" alt="Fine-Tuning LLMs" class="rounded-xl w-full h-48 mb-4 object-cover">
+                        <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Fine-Tuning LLMs for Domain Applications</h3>
+                        <p class="text-gray-600 mt-3 flex-grow transition-colors duration-300">Fine-tuned 5 LLMs (Mistral, LLaMA2, Idefics, BERT, Gemma) for legal, medical, and customer service domains. Applied LoRA, AdamW, and FP16 optimization, reducing computational overhead by 40%. Deployed on AWS/Azure achieving sub-100ms latency.</p>
+                        <div class="mt-4 flex flex-wrap">
+                            <span class="tech-badge">LLMs</span>
+                            <span class="tech-badge">LoRA</span>
+                            <span class="tech-badge">AWS/Azure</span>
+                            <span class="tech-badge">Optimization</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://github.com/DV2123/Various-Fine-Tunning-on-LLMs" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-medium flex items-center">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 flex flex-col group transition-colors duration-300">
+                        <img src="assets/bus_management.png" alt="Advanced Public Bus Transport Management" class="rounded-xl w-full h-48 mb-4 object-cover">
+                        <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Advanced Public Bus Transport Management System</h3>
+                        <p class="text-gray-600 mt-3 flex-grow transition-colors duration-300">Executed real-time monitoring for 50+ buses using YOLO-based Computer Vision and IoT on AWS. Constructed cross-platform mobile app using Flutter, supporting 500+ daily users. Presented at IEEE ICCE.</p>
+                        <div class="mt-4 flex flex-wrap">
+                            <span class="tech-badge">YOLO</span>
+                            <span class="tech-badge">Computer Vision</span>
+                            <span class="tech-badge">IoT</span>
+                            <span class="tech-badge">Flutter</span>
+                            <span class="tech-badge">AWS</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://github.com/DV2123/APBTMS" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-medium flex items-center">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 flex flex-col group transition-colors duration-300">
+                        <img src="assets/text_summarizer.png" alt="Text Summarizer using Pegasus" class="rounded-xl w-full h-48 mb-4 object-cover">
+                        <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Text Summarizer using Pegasus</h3>
+                        <p class="text-gray-600 mt-3 flex-grow transition-colors duration-300">Used Pegasus for abstractive text summarization, achieving ROUGE score 0.0186 and BLEU 0.0185. Implemented end-to-end pipeline with deployment capabilities.</p>
+                        <div class="mt-4 flex flex-wrap">
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">Pegasus</span>
+                            <span class="tech-badge">Text Summarization</span>
+                            <span class="tech-badge">Transformers</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://github.com/DV2123/End-to-End-Text-Summerizer-with-deployment" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-medium flex items-center">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 flex flex-col group transition-colors duration-300">
+                        <img src="assets/smart_workplace.png" alt="Smart Workplace for Workers" class="rounded-xl w-full h-48 mb-4 object-cover">
+                        <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Smart Workplace for Workers</h3>
+                        <p class="text-gray-600 mt-3 flex-grow transition-colors duration-300">Implemented IoT sensors and real-time analytics to monitor productivity and safety, reducing workplace hazards. Used YOLOv7 for real-time object detection and safety monitoring.</p>
+                        <div class="mt-4 flex flex-wrap">
+                            <span class="tech-badge">IoT</span>
+                            <span class="tech-badge">YOLOv7</span>
+                            <span class="tech-badge">Computer Vision</span>
+                            <span class="tech-badge">Safety Monitoring</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://github.com/DV2123/Smart-Safety-and-Monitoring-System-for-Construction-Workers-using-YoloV7" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-medium flex items-center">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 flex flex-col group transition-colors duration-300">
+                        <img src="assets/food_chatbot.png" alt="Food App with Chainlit Chatbot" class="rounded-xl w-full h-48 mb-4 object-cover">
+                        <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">Food App with Chainlit Chatbot</h3>
+                        <p class="text-gray-600 mt-3 flex-grow transition-colors duration-300">Developed an AI-powered Chainlit chatbot with 90% response accuracy. Built conversational AI for food ordering and recommendations using natural language understanding.</p>
+                        <div class="mt-4 flex flex-wrap">
+                            <span class="tech-badge">Chainlit</span>
+                            <span class="tech-badge">Chatbot</span>
+                            <span class="tech-badge">NLP</span>
+                            <span class="tech-badge">AI</span>
+                        </div>
+                        <div class="mt-6">
+                            <a href="https://github.com/DV2123/Food-App-with-chainlit-chatbot" target="_blank" class="text-cyan-600 hover:text-cyan-700 font-medium flex items-center">
+                                View Project
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Publications Section -->
+        <section id="publications" class="py-24 bg-white section-fade-in pattern-bg transition-colors duration-300">
+             <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Research & Publications</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto transition-colors duration-300">Contributions to the scientific community</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <div class="card-hover bg-white p-6 rounded-lg border border-gray-200 transition-colors duration-300">
+                        <p class="text-gray-600 transition-colors duration-300">D. Patel et al., <strong class="text-gray-800 font-semibold transition-colors duration-300">"Advanced Public Bus Transport Management System: An Innovative Smart Bus Concept"</strong>. Presented at 42nd IEEE International Conference on Consumer Electronics (ICCE), 2024.</p>
+                        <div class="mt-3">
+                            <a href="https://ieeexplore.ieee.org/document/10444144" class="text-cyan-600 hover:text-cyan-700 text-sm font-medium flex items-center">
+                                Read Publication
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M10.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L12.586 11H5a1 1 0 110-2h7.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="card-hover bg-white p-6 rounded-lg border border-gray-200 transition-colors duration-300">
+                        <p class="text-gray-600 transition-colors duration-300"><strong class="text-gray-800 font-semibold transition-colors duration-300">"Provisional Patent: Device and Method for Treatment of RLS (Restless Leg Syndrome)"</strong>. India Application No. 202411083538 | USA Application No. 63/818,733, July 2024.</p>
+                        <div class="mt-3">
+                            <span class="text-sm text-gray-500 font-medium">Patent Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Education Section -->
+        <section id="education" class="py-24 section-fade-in">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Education</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto transition-colors duration-300">My academic journey in AI and Computer Science</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-8">
+                    <!-- Education Item 1 -->
+                    <div class="card-hover bg-white rounded-xl p-8 border border-gray-200 transition-colors duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300">Master of Science in Artificial Intelligence</h3>
+                                <p class="text-lg text-cyan-600 mt-1 font-semibold">Northeastern University</p>
+                                <p class="text-gray-600 mt-1 transition-colors duration-300">Khoury College of Computer Sciences</p>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0">
+                                <p class="text-gray-500 font-medium">Sep 2025 - December 2027</p>
+                                <p class="text-gray-600 mt-1">Boston, MA</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600 transition-colors duration-300"><strong>Focus Areas:</strong> Machine Learning, Deep Learning, Natural Language Processing, Computer Vision</p>
+                        </div>
+                    </div>
+                    <!-- Education Item 2 -->
+                    <div class="card-hover bg-white rounded-xl p-8 border border-gray-200 transition-colors duration-300">
+                        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                            <div>
+                                <h3 class="text-2xl font-bold text-gray-900 transition-colors duration-300">Bachelor of Technology in Computer Science and Engineering</h3>
+                                <p class="text-lg text-cyan-600 mt-1 font-semibold">Karnavati University</p>
+                                <p class="text-gray-600 mt-1 transition-colors duration-300">School of Engineering and Technology</p>
+                            </div>
+                            <div class="text-left md:text-right mt-4 md:mt-0">
+                                <p class="text-gray-500 font-medium">July 2021 - June 2025</p>
+                                <p class="text-gray-600 mt-1">Gandhinagar, India</p>
+                            </div>
+                        </div>
+                        <div class="mt-4">
+                            <p class="text-gray-600 transition-colors duration-300"><strong>Relevant Coursework:</strong> Data Structures, Algorithms, Machine Learning, Deep Learning, Natural Language Processing, Computer Vision, Database Management Systems</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> 
+        
+        <!-- Awards & Achievements Section -->
+        <section id="awards" class="py-24 bg-white section-fade-in transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Awards & Achievements</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto transition-colors duration-300">Recognition for excellence in hackathons and innovation</p>
+                </div>
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <!-- Award 1 -->
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 transition-colors duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-amber-100 flex items-center justify-center transition-colors duration-300">
+                                <svg class="w-6 h-6 text-amber-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">2nd Runner Up - Invention Factory</h3>
+                                    <span class="text-sm text-gray-500 mt-1 sm:mt-0">July 2024</span>
+                                </div>
+                                <p class="text-gray-600 mt-2 transition-colors duration-300">IIT Gandhinagar</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Award 2 -->
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 transition-colors duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-cyan-100 flex items-center justify-center transition-colors duration-300">
+                                <svg class="w-6 h-6 text-cyan-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">1st Place - Neurelo API Management Track</h3>
+                                    <span class="text-sm text-gray-500 mt-1 sm:mt-0">January 2024</span>
+                                </div>
+                                <p class="text-gray-600 mt-2 transition-colors duration-300">Hack This Fall Hackathon</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Award 3 -->
+                    <div class="card-hover bg-white rounded-xl p-6 border border-gray-200 transition-colors duration-300">
+                        <div class="flex items-start gap-4">
+                            <div class="flex-shrink-0 w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center transition-colors duration-300">
+                                <svg class="w-6 h-6 text-emerald-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0" />
+                                </svg>
+                            </div>
+                            <div class="flex-grow">
+                                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between">
+                                    <h3 class="text-xl font-bold text-gray-900 transition-colors duration-300">1st Place - DAIICT Hackathon</h3>
+                                    <span class="text-sm text-gray-500 mt-1 sm:mt-0">August 2023</span>
+                                </div>
+                                <p class="text-gray-600 mt-2 transition-colors duration-300">Dhirubhai Ambani Institute of Information and Communication Technology</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+        <!-- Resume PDF Preview Section -->
+        <section id="resume" class="py-24 bg-white section-fade-in transition-colors duration-300">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Resume</h2>
+                    <p class="text-gray-600 max-w-2xl mx-auto transition-colors duration-300">A detailed overview of my education, experience, and skills</p>
+                </div>
+                <div class="max-w-4xl mx-auto">
+                    <!-- PDF Preview Container -->
+                    <div class="bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden transition-colors duration-300">
+                        <!-- PDF Viewer -->
+                        <div class="h-[600px] overflow-hidden relative">
+                            <!-- PDF Embed with scrollbar -->
+                            <div class="h-full overflow-y-auto bg-gray-50">
+                                <embed 
+                                    src="assets/Resume.pdf" 
+                                    type="application/pdf" 
+                                    width="100%" 
+                                    height="100%"
+                                    class="min-h-full"
+                                >
+                                <!-- Fallback message if PDF doesn't load -->
+                                <div id="pdf-fallback" class="hidden p-8 text-center">
+                                    <div class="text-gray-500 mb-4">
+                                        <svg class="w-16 h-16 mx-auto mb-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                                        </svg>
+                                        <p class="mb-4">Unable to load PDF preview. You can download the resume instead.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Custom scroll indicator -->
+                            <div class="absolute right-2 top-1/2 transform -translate-y-1/2 hidden md:block">
+                                <div class="flex flex-col items-center">
+                                    <svg class="w-6 h-6 text-cyan-500 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                                    </svg>
+                                    <span class="text-xs text-gray-500 mt-2">Scroll</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Download Button -->
+                        <div class="p-6 bg-gray-50 border-t border-gray-200 flex flex-col sm:flex-row justify-between items-center gap-4 transition-colors duration-300">
+                            <div>
+                                <p class="text-sm text-gray-600 transition-colors duration-300">
+                                    <span class="font-semibold">File:</span> Divya_Patel_Resume.pdf
+                                </p>
+                                <p class="text-sm text-gray-600 mt-1 transition-colors duration-300">
+                                    <span class="font-semibold">Last updated:</span> January 2025
+                                </p>
+                            </div>
+                            <div class="flex flex-col sm:flex-row gap-3">
+                                <a href="assets/Resume.pdf" download class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-700 text-white font-semibold py-3 px-6 rounded-lg transition-all transform hover:scale-105 shadow-md hover:shadow-lg">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z" clip-rule="evenodd" />
+                                    </svg>
+                                    Download PDF
+                                </a>
+                                <a href="assets/Resume.pdf" target="_blank" class="inline-flex items-center gap-2 bg-white border border-cyan-600 text-cyan-600 hover:bg-cyan-50 font-semibold py-3 px-6 rounded-lg transition-all">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd" />
+                                    </svg>
+                                    Open in New Tab
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Tips/Instructions -->
+                    <div class="mt-8 p-4 bg-cyan-50 rounded-lg border border-cyan-200 transition-colors duration-300">
+                        <div class="flex items-start gap-3">
+                            <svg class="w-5 h-5 text-cyan-600 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <div>
+                                <p class="text-sm text-cyan-800 font-medium transition-colors duration-300">Quick Tips:</p>
+                                <ul class="text-sm text-cyan-700 mt-1 space-y-1 transition-colors duration-300">
+                                    <li>• Scroll within the PDF viewer to navigate through the resume</li>
+                                    <li>• Use the download button to save a copy</li>
+                                    <li>• Click "Open in New Tab" for a full-screen view</li>
+                                    <li>• For best printing results, download the PDF first</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+      
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-24 text-center section-fade-in">
+            <div class="max-w-2xl mx-auto">
+                <h2 class="text-4xl font-bold text-gray-900 mb-4 transition-colors duration-300">Let's Build Something Great</h2>
+                <p class="text-gray-600 mb-8 mx-auto transition-colors duration-300">I'm actively seeking new opportunities and collaborations in AI and machine learning. If you have a project in mind or just want to connect, I'd love to hear from you.</p>
+                <a href="mailto:patel.divyav@northeastern.edu" class="inline-block bg-cyan-600 hover:bg-cyan-700 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all transform hover:scale-105 shadow-md hover:shadow-lg glow">
+                    Email Me
+                </a>
+                <div class="mt-10 text-gray-500 transition-colors duration-300">
+                    <p>+1 (617) 777-7435</p>
+                    <p class="mt-2">Boston, MA - 02131</p>
+                </div>
+                <div class="mt-12 flex justify-center gap-6">
+                    <a href="https://www.linkedin.com/in/divya-patel-dv213/" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-600 transition-colors p-2 rounded-full hover:bg-cyan-50">
+                        <span class="sr-only">LinkedIn</span>
+                        <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    </a>
+                    <a href="https://github.com/DV2123" target="_blank" rel="noopener noreferrer" class="text-gray-500 hover:text-cyan-600 transition-colors p-2 rounded-full hover:bg-cyan-50">
+                         <span class="sr-only">GitHub</span>
+                         <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top" class="fixed bottom-8 right-8 bg-cyan-600 text-white p-3 rounded-full shadow-lg opacity-0 transition-opacity duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7" />
+        </svg>
+    </button>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 transition-colors duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-gray-500 transition-colors duration-300">
+            <p>&copy; 2025 Divya Patel. All Rights Reserved.</p>
+            <p class="mt-2 text-sm">Crafted with passion for AI and innovation</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle logic
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuOpenIcon = document.getElementById('menu-open-icon');
+        const menuCloseIcon = document.getElementById('menu-close-icon');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            menuOpenIcon.classList.toggle('hidden');
+            menuCloseIcon.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.classList.contains('hidden') && 
+                !mobileMenuButton.contains(e.target) && 
+                !mobileMenu.contains(e.target)) {
+                mobileMenu.classList.add('hidden');
+                menuOpenIcon.classList.remove('hidden');
+                menuCloseIcon.classList.add('hidden');
+            }
+        });
+
+        // Intersection Observer for fade-in animations
+        const sections = document.querySelectorAll('.section-fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target); 
+                }
+            });
+        }, {
+            threshold: 0.1
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+
+        // Scroll to top button
+        const scrollTopButton = document.getElementById('scroll-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopButton.classList.remove('opacity-0');
+                scrollTopButton.classList.add('opacity-100');
+            } else {
+                scrollTopButton.classList.remove('opacity-100');
+                scrollTopButton.classList.add('opacity-0');
+            }
+        });
+        
+        scrollTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Smooth scrolling for anchor links with offset for fixed header
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Dark Mode Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeToggleMobile = document.getElementById('theme-toggle-mobile');
+        const themeIconLight = document.getElementById('theme-icon-light');
+        const themeIconDark = document.getElementById('theme-icon-dark');
+        const themeIconLightMobile = document.getElementById('theme-icon-light-mobile');
+        const themeIconDarkMobile = document.getElementById('theme-icon-dark-mobile');
+
+        // Check for saved theme preference or respect OS preference
+        const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+        const currentTheme = localStorage.getItem('theme');
+
+        if (currentTheme === 'dark' || (!currentTheme && prefersDarkScheme.matches)) {
+            document.documentElement.classList.add('dark');
+            themeIconLight.classList.add('hidden');
+            themeIconDark.classList.remove('hidden');
+            themeIconLightMobile.classList.add('hidden');
+            themeIconDarkMobile.classList.remove('hidden');
+        } else {
+            document.documentElement.classList.remove('dark');
+            themeIconLight.classList.remove('hidden');
+            themeIconDark.classList.add('hidden');
+            themeIconLightMobile.classList.remove('hidden');
+            themeIconDarkMobile.classList.add('hidden');
+        }
+
+        // Toggle theme function
+        function toggleTheme() {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                themeIconLight.classList.remove('hidden');
+                themeIconDark.classList.add('hidden');
+                themeIconLightMobile.classList.remove('hidden');
+                themeIconDarkMobile.classList.add('hidden');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                themeIconLight.classList.add('hidden');
+                themeIconDark.classList.remove('hidden');
+                themeIconLightMobile.classList.add('hidden');
+                themeIconDarkMobile.classList.remove('hidden');
+            }
+        }
+
+        // Add event listeners to both toggle buttons
+        themeToggle.addEventListener('click', toggleTheme);
+        themeToggleMobile.addEventListener('click', toggleTheme);
+        // Check if PDF loaded successfully
+        document.addEventListener('DOMContentLoaded', function() {
+            const pdfEmbed = document.querySelector('embed[type="application/pdf"]');
+            const pdfFallback = document.getElementById('pdf-fallback');
+            
+            if (pdfEmbed) {
+                pdfEmbed.onerror = function() {
+                    pdfFallback.classList.remove('hidden');
+                    pdfEmbed.style.display = 'none';
+                };
+                
+                // Also check after a delay
+                setTimeout(function() {
+                    if (pdfEmbed.offsetHeight === 0) {
+                        pdfFallback.classList.remove('hidden');
+                        pdfEmbed.style.display = 'none';
+                    }
+                }, 2000);
+            }
+        });
+    </script>
+
+</body>
+</html>
